@@ -64,7 +64,8 @@
         var createScene = function () {
     // This creates a basic Babylon Scene object (non-mesh)
     var scene = new BABYLON.Scene(engine);
-
+    const env = scene.createDefaultEnvironment();
+            
     (async () => {
         const xr = await scene.createDefaultXRExperienceAsync({
           floorMeshes: [env.ground],
