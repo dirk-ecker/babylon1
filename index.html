@@ -64,7 +64,9 @@
         var createScene = function () {
     // This creates a basic Babylon Scene object (non-mesh)
     var scene = new BABYLON.Scene(engine);
-    const xr = scene.createDefaultXRExperienceAsync();
+    const xr = await scene.createDefaultXRExperienceAsync({
+      floorMeshes: [env.ground],
+    });        
 
     var camera = new BABYLON.ArcRotateCamera("camera", BABYLON.Tools.ToRadians(90), BABYLON.Tools.ToRadians(65), 10, BABYLON.Vector3.Zero(), scene);
 
